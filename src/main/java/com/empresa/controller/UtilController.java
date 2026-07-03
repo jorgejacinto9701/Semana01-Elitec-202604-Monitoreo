@@ -37,6 +37,9 @@ public class UtilController {
 	@Autowired
 	private DeporteService deporteService;
 
+	@Autowired
+	private TipoService tipoService;
+
 	@GetMapping("/listaPais")
 	@ResponseBody
 	public List<Pais> listaPais() {
@@ -114,6 +117,12 @@ public class UtilController {
 	@GetMapping("/listaDeporte")
 	public ResponseEntity<List<Deporte>> listaTodos(){
 		List<Deporte> lista = deporteService.listaTodos();
+		return ResponseEntity.ok(lista);
+	}
+
+	@GetMapping("/listaTiposDeProveedor")
+	public ResponseEntity<List<Tipo>> listaTodosTiposDeProveedor(){
+		List<Tipo> lista = tipoService.listaTodos();
 		return ResponseEntity.ok(lista);
 	}
 }

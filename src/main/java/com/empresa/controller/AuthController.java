@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.empresa.dto.UsuarioLoginDto;
+import com.empresa.dto.UsuarioLoginDTO;
 import com.empresa.security.JwtProvider;
 import com.empresa.security.UsuarioPrincipal;
 import com.empresa.util.AppSettings;
@@ -36,7 +36,7 @@ public class AuthController {
     
     
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UsuarioLoginDto loginUsuario){
+    public ResponseEntity<?> login(@RequestBody UsuarioLoginDTO loginUsuario){
     	log.info(">>> login >>> " + loginUsuario.getLogin());
     	log.info(">>> login >>> " + loginUsuario.getPassword());
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getLogin(), loginUsuario.getPassword()));
