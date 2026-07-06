@@ -16,7 +16,7 @@ import com.empresa.util.AppSettings;
 
 @RestController
 @RequestMapping("/url/util")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = AppSettings.URL_CROSS_ORIGIN)
 public class UtilController {
 
 	@Autowired
