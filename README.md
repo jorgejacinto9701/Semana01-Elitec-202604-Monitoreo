@@ -54,7 +54,8 @@ elitec/
 | Josue Jesús Ibáñez Campos         | https://github.com/ibca2994-dev      |
 | Luis Miguel De la Fuente Felipa   | https://github.com/Jocker934         |
 | Bryan Alexander Quintanilla Gómez | https://github.com/BQuintanillaGomez |
-| Benavente Arestegui,Alexander  	| https://github.com/alexbena20		   |
+| Benavente Arestegui,Alexander  	  | https://github.com/alexbena20		     
+| Mazo Tabares,Emanuel  	          | https://github.com/emanuelmazotabares-ctrl		     
 
 ## ▶️ Ejecución del proyecto
 
