@@ -19,5 +19,10 @@ public class AlumnoServiceImp implements AlumnoService {
 		return repository.findByOrderByApellidosAsc();
 	}
 
+	@Override
+	public List<Alumno> listaPorDNI(String dni) {
+		return repository.listaPorDNI(dni);
+	}
+
 	
 }
