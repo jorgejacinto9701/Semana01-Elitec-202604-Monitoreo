@@ -18,13 +18,8 @@ public class PlatoController {
 
     @Autowired
     private PlatoService service;
-
-
-    @GetMapping("/porNombre/{filtro}")
-    public ResponseEntity<List<Plato>> listaPorNombre(@PathVariable String filtro){
-        List<Plato> lista = service.listaPorNombre("%"+filtro+"%");
-        return ResponseEntity.ok(lista);
-    }
+         
+   
 
     @PostMapping()
     public ResponseEntity<?> registro(@RequestBody Plato obj){
@@ -43,5 +38,13 @@ public class PlatoController {
         return ResponseEntity.ok(salida);
     }
 
-
+    
+    @GetMapping("/porCategoria/{filtro}")
+    public ResponseEntity<List<Plato>> listaPorCategoria(@PathVariable String filtro){
+        List<Plato> lista = service.listaPorCategoria(filtro);
+        return ResponseEntity.ok(lista);
+    }
+    
+    
+    
 }

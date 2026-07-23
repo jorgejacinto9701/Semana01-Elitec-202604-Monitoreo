@@ -7,5 +7,5 @@ import com.empresa.entity.Alumno;
 public interface AlumnoService {
 
 	public abstract List<Alumno> listaTodos();
-
+	public abstract List<Alumno> listaPorDNI(String dni);
 }

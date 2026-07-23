@@ -9,4 +9,9 @@ public interface PlatoService {
     public abstract List<Plato> listaPorNombre(String filtro);
     public abstract Plato insertaPlato(Plato obj);
     public abstract void eliminaPlato(int id);
+    public abstract List<Plato> listaPorCategoria(String categoria);
+    
+    
+    
+    
 }
