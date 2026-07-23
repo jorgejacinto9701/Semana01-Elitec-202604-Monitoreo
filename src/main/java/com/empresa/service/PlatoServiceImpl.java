@@ -32,6 +32,10 @@ public class PlatoServiceImpl implements PlatoService{
 		return repository.listaPorCategoria(categoria);
 	}
     
+	@Override
+	public List<Plato> listaPorCategoriaYNivelPicante(String categoria, String nivelpicante) {
+	    return repository.listaPorCategoriaYNivelPicante(categoria, nivelpicante);
+	}
     
     
     
