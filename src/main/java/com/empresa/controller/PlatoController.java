@@ -45,6 +45,14 @@ public class PlatoController {
         return ResponseEntity.ok(lista);
     }
     
-    
+    @GetMapping("/porCategoriaYNivel/{categoria}/{nivel}")
+    public ResponseEntity<List<Plato>> listaPorCategoriaYNivelPicante(
+            @PathVariable String categoria,
+            @PathVariable String nivel) {
+
+        List<Plato> lista = service.listaPorCategoriaYNivelPicante(categoria, nivel);
+
+        return ResponseEntity.ok(lista);
+    }
     
 }
