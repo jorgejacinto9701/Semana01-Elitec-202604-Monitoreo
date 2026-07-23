@@ -4,6 +4,7 @@ import com.empresa.dto.ProveedorEstadoDTO;
 import com.empresa.dto.ProveedorMesDTO;
 import com.empresa.dto.ProveedorPaisDTO;
 import com.empresa.dto.ProveedorTipoDTO;
+import com.empresa.entity.Alumno;
 import com.empresa.entity.Proveedor;
 import com.empresa.repository.ProveedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +57,11 @@ public class ProveedorServiceImpl implements ProveedorService{
         return repository.cantidadPorMes();
     }
 
-
-}
+	@Override
+	public List<Proveedor> listaPorNombre(String nombre) {
+		return repository.listaPorNombre(nombre);
+	}
+   
+	
+    
+}  

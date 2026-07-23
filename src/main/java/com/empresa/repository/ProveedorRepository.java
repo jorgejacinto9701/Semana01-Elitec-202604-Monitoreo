@@ -1,5 +1,6 @@
 package com.empresa.repository;
 
+import com.empresa.entity.Alumno;
 import com.empresa.entity.Proveedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -48,5 +49,9 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
             "GROUP BY FUNCTION('DATE_PART','month', p.fechaRegistro) " +
             "ORDER BY FUNCTION('DATE_PART','month', p.fechaRegistro)")
     public abstract List<ProveedorMesDTO> cantidadPorMes();
+    
+    
+	@Query("select e from Proveedor e where e.nombre = ?1")
+	public abstract List<Proveedor> listaPorNombre(String nombre);
 
 }

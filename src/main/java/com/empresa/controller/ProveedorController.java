@@ -26,7 +26,8 @@ public class ProveedorController {
 
     @Autowired
     private ProveedorService proveedorService;
-
+    
+    
     @GetMapping
     public ResponseEntity<List<Proveedor>> listaTodosProveedor(){
         List<Proveedor> lista = proveedorService.listaTodos();
@@ -107,4 +108,11 @@ public class ProveedorController {
         List<ProveedorMesDTO> lista = proveedorService.cantidadPorMes();
         return ResponseEntity.ok(lista);
     }
+    
+    @GetMapping("/listaPorNombre/{nombre}")
+    public List<Proveedor> listaPorNombre(@PathVariable String nombre){
+        return proveedorService.listaPorNombre(nombre);
+    }
+
+    
 }
