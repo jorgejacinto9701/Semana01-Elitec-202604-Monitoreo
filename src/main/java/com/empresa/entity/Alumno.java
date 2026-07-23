@@ -30,10 +30,9 @@ public class Alumno {
 	private String nombres;
 	private String apellidos;
 	private String telefono;
-	private String celular;
 	private String dni;
 	private String correo;
-	private String tipoSangre;			
+	
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "America/Lima")
 	private LocalDate fechaNacimiento;
@@ -56,15 +55,7 @@ public class Alumno {
 	@JoinColumn(name = "idModalidad")
 	private DataCatalogo modalidad;
 	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idUsuarioRegistro")
-	private Usuario usuarioRegistro;
-	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idUsuarioActualiza")
-	private Usuario usuarioActualiza;
+
 	
 	
 
