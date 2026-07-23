@@ -19,4 +19,6 @@ public interface ProveedorService {
     public abstract List<ProveedorEstadoDTO> cantidadPorEstado();
     public abstract List<ProveedorTipoDTO> cantidadPorTipo();
     public abstract List<ProveedorMesDTO> cantidadPorMes();
+    
+    public abstract List<Proveedor> listaPorNombre(String nombre);
 }
