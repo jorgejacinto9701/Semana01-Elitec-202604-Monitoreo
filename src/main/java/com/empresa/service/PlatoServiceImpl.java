@@ -26,4 +26,14 @@ public class PlatoServiceImpl implements PlatoService{
     public void eliminaPlato(int id) {
         repository.deleteById(id);
     }
+
+	@Override
+	public List<Plato> listaPorCategoria(String categoria) {
+		return repository.listaPorCategoria(categoria);
+	}
+    
+    
+    
+    
+    
 }
