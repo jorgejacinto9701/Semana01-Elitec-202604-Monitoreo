@@ -15,7 +15,7 @@ public class LibroServiceImpl implements LibroService{
 
     @Override
     public List<Libro> listaPorTitulo(String filtro) {
-        return repository.consultaDinamica(filtro);
+        return repository.buscaPorLibro(filtro);
     }
 
     @Override
