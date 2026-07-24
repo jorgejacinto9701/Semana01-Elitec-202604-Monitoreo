@@ -25,6 +25,17 @@ public class LibroController {
         List<Libro> lista = service.listaPorTitulo("%"+filtro+"%");
         return ResponseEntity.ok(lista);
     }
+    
+    
+    @GetMapping("/consulta")
+    public ResponseEntity<List<Libro>> listaPorTituloYAutor(
+            @RequestParam String titulo,
+            @RequestParam String autor) {
+
+        List<Libro> lista = service.listaPorTituloYAutor(titulo, autor);
+        return ResponseEntity.ok(lista);
+    }
+
 
     @PostMapping()
     public ResponseEntity<?> registro(@RequestBody Libro obj){

@@ -17,6 +17,12 @@ public class LibroServiceImpl implements LibroService{
     public List<Libro> listaPorTitulo(String filtro) {
         return repository.buscaPorLibro(filtro);
     }
+    
+    @Override
+    public List<Libro> listaPorTituloYAutor(String titulo, String autor) {
+        return repository.buscarPorTituloYAutor(titulo, autor);
+    }
+
 
     @Override
     public Libro insertaLibro(Libro obj) {
