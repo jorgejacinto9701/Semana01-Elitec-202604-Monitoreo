@@ -15,6 +15,15 @@ public interface LibroRepository  extends JpaRepository<Libro, Integer> {
 
 	 @Query("SELECT l FROM Libro l WHERE LOWER(l.titulo) LIKE LOWER(CONCAT('%', :texto, '%'))")
 	 List<Libro> buscaPorLibro(@Param("texto") String texto);
+	 
+	 
+	 @Query("SELECT l FROM Libro l "
+	            + "WHERE LOWER(l.titulo) LIKE LOWER(CONCAT('%', :titulo, '%')) "
+	            + "AND LOWER(l.autor) LIKE LOWER(CONCAT('%', :autor, '%')) "
+	            + "ORDER BY l.titulo ASC")
+	    List<Libro> buscarPorTituloYAutor(
+	            @Param("titulo") String titulo,
+	            @Param("autor") String autor);
     
    
 }
