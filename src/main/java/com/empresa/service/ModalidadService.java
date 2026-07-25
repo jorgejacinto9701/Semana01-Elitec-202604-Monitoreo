@@ -16,4 +16,5 @@ public interface ModalidadService {
     public abstract List<Modalidad> listaPorSede(String sede);
     public abstract List<Modalidad> listaPorRangoDeporte(int deporteDesde, int deporteHasta);
     public abstract List<Modalidad> listaGeneral(String sede, int estado, String nombre);
+    public abstract List<Modalidad> listaPorNombreYSede(String nombre, String sede);
 }

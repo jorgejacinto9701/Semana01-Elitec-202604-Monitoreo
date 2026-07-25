@@ -57,4 +57,9 @@ public class ModalidaServiceImpl implements  ModalidadService{
         return modalidaRepository.listaGeneral(sede, estado,nombre);
     }
 
+    @Override
+    public List<Modalidad> listaPorNombreYSede(String nombre, String sede) {
+        return modalidaRepository.buscarPorNombreYSede(nombre, sede);
+    }
+
 }
