@@ -3,6 +3,7 @@ package com.empresa.repository;
 import com.empresa.entity.Modalidad;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -17,6 +18,14 @@ public interface ModalidaRepository extends JpaRepository<Modalidad, Integer> {
 
     @Query("select p from Modalidad p where p.sede = ?1 and p.estado = ?2 and p.nombre = ?3")
     public List<Modalidad> listaGeneral(String sede, int estado, String nombre);
+
+    @Query("SELECT m FROM Modalidad m "
+            + "WHERE LOWER(m.nombre) LIKE LOWER(CONCAT('%', :nombre, '%')) "
+            + "AND LOWER(m.sede) LIKE LOWER(CONCAT('%', :sede, '%')) "
+            + "ORDER BY m.nombre ASC")
+    public List<Modalidad> buscarPorNombreYSede(
+            @Param("nombre") String nombre,
+            @Param("sede") String sede);
 
 
 }
