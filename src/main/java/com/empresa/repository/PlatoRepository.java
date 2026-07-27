@@ -17,5 +17,8 @@ public interface PlatoRepository  extends JpaRepository<Plato, Integer> {
     
     @Query ("Select e from Plato e where e.categoria= ?1 ")
     public abstract List<Plato> listaPorCategoria(String categoria);
+    
+    @Query("SELECT p FROM Plato p WHERE p.categoria = ?1 AND p.nivelPicante = ?2")
+    public abstract List<Plato> listaPorCategoriaYNivelPicante(String categoria, String nivelPicante);
 }
 

@@ -49,6 +49,12 @@ public class ModalidadController {
         return ResponseEntity.ok(lista);
     }
 
+    @GetMapping("/consulta")
+    public ResponseEntity<List<Modalidad>> listaPorNombreYSede(@RequestParam String nombre, @RequestParam String sede){
+        List<Modalidad> lista = modalidadService.listaPorNombreYSede(nombre, sede);
+        return ResponseEntity.ok(lista);
+    }
+
 
     @PostMapping()
     public ResponseEntity<?> registro(@RequestBody Modalidad obj){
