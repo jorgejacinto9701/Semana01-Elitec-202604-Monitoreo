@@ -26,32 +26,32 @@ public class PasatiempoController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-	
+
 	@ResponseBody
 	@GetMapping("/listaPasatiempoPorUsuario/{id}")
 	public List<Pasatiempo> listaPasatiempoPorUsuario(@PathVariable("id")int idUsuario){
 		return  usuarioService.traerPasatiempoDeUsuario(idUsuario);
 	}
 
-	
+
 	@ResponseBody
 	@GetMapping("/registraPasatiempo")
 	public HashMap<String, Object> registro(
-			@RequestParam(name = "idUsuario" , defaultValue = "-1" , required = true)int idUsuario, 
+			@RequestParam(name = "idUsuario" , defaultValue = "-1" , required = true)int idUsuario,
 			@RequestParam(name = "idPasatiempo" , defaultValue = "-1" , required = true)int idPasatiempo){
-		HashMap<String, Object> maps = new HashMap<String, Object>();
+		HashMap<String, Object> maps = new HashMap<>();
 		UsuarioHasPasatiempoPK pk = new UsuarioHasPasatiempoPK();
 		pk.setIdPasatiempo(idPasatiempo);
 		pk.setIdUsuario(idUsuario);
 
 		UsuarioHasPasatiempo obj = new UsuarioHasPasatiempo();
 		obj.setUsuarioHasPasatiempoPK(pk);
-		
+
 		Optional<UsuarioHasPasatiempo> existentPasatiempo = usuarioService.buscaPasatiempo(pk);
         if (existentPasatiempo.isEmpty()) {
         	UsuarioHasPasatiempo objSalida = usuarioService.insertaPasatiempo(obj);
         	if (objSalida == null) {
-        		maps.put("mensaje", "Error en el registro");		
+        		maps.put("mensaje", "Error en el registro");
         	}else {
         		maps.put("mensaje", "Registro exitoso");
         	}
@@ -62,32 +62,31 @@ public class PasatiempoController {
         maps.put("lista", lstPasatiempo);
 		return maps;
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/eliminaPasatiempo")
 	public HashMap<String, Object> elimina(
-			@RequestParam(name = "idUsuario" , defaultValue = "-1" , required = true)int idUsuario, 
+			@RequestParam(name = "idUsuario" , defaultValue = "-1" , required = true)int idUsuario,
 			@RequestParam(name = "idPasatiempo" , defaultValue = "-1" , required = true)int idPasatiempo){
-		HashMap<String, Object> maps = new HashMap<String, Object>();
-		
+		HashMap<String, Object> maps = new HashMap<>();
+
 		UsuarioHasPasatiempoPK pk = new UsuarioHasPasatiempoPK();
 		pk.setIdPasatiempo(idPasatiempo);
 		pk.setIdUsuario(idUsuario);
 
 		UsuarioHasPasatiempo obj = new UsuarioHasPasatiempo();
 		obj.setUsuarioHasPasatiempoPK(pk);
-		
+
 		usuarioService.eliminaPasatiempo(obj);
 		maps.put("mensaje", "Eliminación exitosa");
-		
+
 		List<Pasatiempo> lstPasatiempo =  usuarioService.traerPasatiempoDeUsuario(idUsuario);
         maps.put("lista", lstPasatiempo);
 
 		return maps;
 	}
-	
+
 }
 
 
 
-	

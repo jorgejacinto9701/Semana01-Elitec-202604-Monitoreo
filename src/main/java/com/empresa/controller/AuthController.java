@@ -33,30 +33,30 @@ public class AuthController {
 
     @Autowired
     private JwtProvider jwtProvider;
-    
-    
+
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UsuarioLoginDTO loginUsuario){
     	log.info(">>> login >>> " + loginUsuario.getLogin());
     	log.info(">>> login >>> " + loginUsuario.getPassword());
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getLogin(), loginUsuario.getPassword()));
-        
+
         log.info(">>> authentication >>> " + authentication);
         log.info(">>> Inicio de Generacion de Token ");
         //Generacion del Token
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.generateToken(authentication);
         log.info(">>> token >>> " + token);
-        
+
         //Validaciones en la base de datos
         UsuarioPrincipal usuario = (UsuarioPrincipal)authentication.getPrincipal();
         log.info(">>> usuario >>> " + usuario.toString());
-        
+
 
         Map<String, Object> response = new HashMap<>();
         response.put("bearer", "Bearer");
         response.put("token", token);
-        
+
         return ResponseEntity.ok(response);
     }
 }

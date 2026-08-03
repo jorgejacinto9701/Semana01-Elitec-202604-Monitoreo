@@ -22,8 +22,8 @@ import lombok.Setter;
 @Entity
 @Table(name = "alumno")
 public class Alumno {
-	
-  
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idAlumno;
@@ -33,11 +33,11 @@ public class Alumno {
 	private String celular;
 	private String dni;
 	private String correo;
-	private String tipoSangre;			
-	
+	private String tipoSangre;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "America/Lima")
 	private LocalDate fechaNacimiento;
-	
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
 	private LocalDateTime fechaRegistro;
 
@@ -50,23 +50,23 @@ public class Alumno {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idPais")
 	private Pais pais;
-	
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idModalidad")
 	private DataCatalogo modalidad;
-	
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUsuarioRegistro")
 	private Usuario usuarioRegistro;
-	
+
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUsuarioActualiza")
 	private Usuario usuarioActualiza;
-	
-	
 
-   
+
+
+
 }

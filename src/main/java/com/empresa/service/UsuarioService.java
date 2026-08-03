@@ -12,10 +12,10 @@ public interface UsuarioService {
 
 	public abstract List<Usuario> listaUsuario();
 	public abstract List<Pasatiempo> traerPasatiempoDeUsuario(int idUsuario);
-	
+
 	public abstract UsuarioHasPasatiempo insertaPasatiempo(UsuarioHasPasatiempo obj);
 	public abstract void eliminaPasatiempo(UsuarioHasPasatiempo obj);
 	public abstract Optional<UsuarioHasPasatiempo> buscaPasatiempo(UsuarioHasPasatiempoPK obj);
-	
-	
+
+
 }

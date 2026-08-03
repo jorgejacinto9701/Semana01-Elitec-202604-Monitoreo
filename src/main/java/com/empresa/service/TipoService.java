@@ -1,8 +1,8 @@
 package com.empresa.service;
 
-import com.empresa.entity.Tipo;
-
 import java.util.List;
+
+import com.empresa.entity.Tipo;
 
 public interface TipoService {
 

@@ -33,10 +33,10 @@ public class UsuarioPrincipal implements UserDetails {
 	private static String nombreCompleto;
 	private Collection<? extends GrantedAuthority> authorities;
 	private List<Opcion> opciones;
-	
+
 	public static UsuarioPrincipal build(Usuario usuario, List<Rol> roles, List<Opcion> opciones) {
 		log.info(">>>UsuarioPrincipal >> " + usuario);
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		List<GrantedAuthority> authorities = new ArrayList<>();
 		for (Rol x : roles) {
 			authorities.add(new SimpleGrantedAuthority(x.getNombre()));
 		}
@@ -78,12 +78,12 @@ public class UsuarioPrincipal implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
+
 
 	public String getNombreCompleto() {
 		return nombreCompleto;
 	}
-	
+
 	public int getIdUsuario() {
 		return idUsuario;
 	}

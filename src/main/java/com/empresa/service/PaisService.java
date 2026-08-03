@@ -1,8 +1,8 @@
 package com.empresa.service;
 
-import com.empresa.entity.Pais;
-
 import java.util.List;
+
+import com.empresa.entity.Pais;
 
 public interface PaisService {
 

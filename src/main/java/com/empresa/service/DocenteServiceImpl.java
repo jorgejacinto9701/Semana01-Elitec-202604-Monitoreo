@@ -1,18 +1,44 @@
 package com.empresa.service;
 
-import com.empresa.entity.Docente;
-import com.empresa.repository.DocenteRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class DocenteServiceImpl implements  DocenteService{
+import com.empresa.entity.Docente;
+import com.empresa.repository.DocenteRepository;
 
-    @Autowired
+@Service
+public class DocenteServiceImpl implements DocenteService {
+
+	//METODOS PARA INDICAR QUE LLAME AL REPOSITORIO
+	@Autowired
     private DocenteRepository repository;
 
     @Override
-    public Docente insertaDocente(Docente obj) {
-        return repository.save(obj);
+    public List<Docente> listaTodos() {
+        return repository.findByOrderByNombresAsc();
     }
-}
+
+    @Override
+    public List<Docente> listaPorNombre(String filtro) {
+        return repository.listaPorNombre(filtro);
+    }
+
+    /*@Override
+    public List<Docente> listaPorDNI(String dni) {
+        return repository.listaPorDNI(dni);
+    }*/
+
+    @Override
+    public List<Docente> listaDocentePorUbigeo(int idUbigeo) {
+        return repository.listaDocentePorUbigeo(idUbigeo);
+    }
+
+    @Override
+    public List<Docente> listaDocentesPorNombreYUbigeo(String nombre, Integer ubigeo) {
+        return repository.listaPorNombreAndUbigeo(nombre, ubigeo);
+    }
+
+
+}// fin del public

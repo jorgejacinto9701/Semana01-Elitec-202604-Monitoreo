@@ -1,8 +1,8 @@
 package com.empresa.service;
 
-import com.empresa.entity.Ubigeo;
-
 import java.util.List;
+
+import com.empresa.entity.Ubigeo;
 
 public interface UbigeoService {
 

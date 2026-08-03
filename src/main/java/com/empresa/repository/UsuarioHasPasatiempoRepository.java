@@ -7,5 +7,5 @@ import com.empresa.entity.UsuarioHasPasatiempoPK;
 
 public interface UsuarioHasPasatiempoRepository extends JpaRepository<UsuarioHasPasatiempo, UsuarioHasPasatiempoPK>{
 
-	
+
 }

@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig   {
 
     @Autowired
-    UserDetailsService userDetailsService;	
+    UserDetailsService userDetailsService;
 
     @Autowired
     JwtEntryPoint jwtEntryPoint;
@@ -31,14 +31,14 @@ public class SecurityConfig   {
     PasswordEncoder passwordEncoder() {
       return new BCryptPasswordEncoder();
     }
-    
+
     @Bean
     DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-         
+
         authProvider.setUserDetailsService(userDetailsService);
         authProvider.setPasswordEncoder(passwordEncoder());
-     
+
         return authProvider;
     }
 
@@ -46,10 +46,10 @@ public class SecurityConfig   {
     AuthenticationManager authenticationManager(AuthenticationConfiguration authConfiguration) throws Exception {
       return authConfiguration.getAuthenticationManager();
     }
-    
+
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    	 
+
     	http
         .cors(cors -> {})
         .csrf(csrf -> csrf.disable())
@@ -61,7 +61,7 @@ public class SecurityConfig   {
         .authenticated());
     	http.authenticationProvider(authenticationProvider());
     	http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-    	 
+
         return http.build();
     }
 }

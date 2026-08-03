@@ -18,6 +18,6 @@ public class Pasatiempo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPasatiempo;
 	private String nombre;
-	
-	
+
+
 }

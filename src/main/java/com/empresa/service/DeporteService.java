@@ -1,8 +1,8 @@
 package com.empresa.service;
 
-import com.empresa.entity.Deporte;
-
 import java.util.List;
+
+import com.empresa.entity.Deporte;
 
 public interface DeporteService {
 

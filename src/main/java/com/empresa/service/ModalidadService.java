@@ -1,8 +1,8 @@
 package com.empresa.service;
 
-import com.empresa.entity.Modalidad;
-
 import java.util.List;
+
+import com.empresa.entity.Modalidad;
 
 public interface ModalidadService {
 

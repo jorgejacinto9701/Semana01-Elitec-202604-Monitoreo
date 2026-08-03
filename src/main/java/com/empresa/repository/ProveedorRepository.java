@@ -1,14 +1,15 @@
 package com.empresa.repository;
 
-import com.empresa.entity.Proveedor;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
-import com.empresa.dto.ProveedorPaisDTO;
 import com.empresa.dto.ProveedorEstadoDTO;
-import com.empresa.dto.ProveedorTipoDTO;
 import com.empresa.dto.ProveedorMesDTO;
+import com.empresa.dto.ProveedorPaisDTO;
+import com.empresa.dto.ProveedorTipoDTO;
+import com.empresa.entity.Proveedor;
 
 
 public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {

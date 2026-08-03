@@ -3,7 +3,6 @@ package com.empresa.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Embeddable;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

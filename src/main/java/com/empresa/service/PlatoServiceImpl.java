@@ -1,9 +1,10 @@
 package com.empresa.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import com.empresa.entity.Plato;
 import com.empresa.repository.PlatoRepository;
 
@@ -23,7 +24,8 @@ public class PlatoServiceImpl implements PlatoService{
         return repository.save(obj);
     }
 
-    public void eliminaPlato(int id) {
+    @Override
+	public void eliminaPlato(int id) {
         repository.deleteById(id);
     }
 }

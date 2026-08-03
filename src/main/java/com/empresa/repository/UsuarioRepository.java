@@ -3,12 +3,12 @@ package com.empresa.repository;
 import java.util.List;
 import java.util.Optional;
 
-import com.empresa.entity.Pasatiempo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.empresa.entity.Opcion;
+import com.empresa.entity.Pasatiempo;
 import com.empresa.entity.Rol;
 import com.empresa.entity.Usuario;
 
@@ -22,7 +22,7 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     @Query("SELECT DISTINCT r FROM Rol r, UsuarioHasRol ur WHERE r.idRol = ur.rol.idRol AND ur.usuario.idUsuario = :idUsuario")
     List<Rol> traerRolesDeUsuario(@Param("idUsuario") int idUsuario);
-    
+
     Optional<Usuario> findByLogin(String login);
 
     @Query("Select r.pasatiempo from UsuarioHasPasatiempo r where r.usuario.idUsuario = ?1")

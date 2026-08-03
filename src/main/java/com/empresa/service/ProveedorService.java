@@ -1,13 +1,12 @@
 package com.empresa.service;
 
+import java.util.List;
+
 import com.empresa.dto.ProveedorEstadoDTO;
 import com.empresa.dto.ProveedorMesDTO;
 import com.empresa.dto.ProveedorPaisDTO;
 import com.empresa.dto.ProveedorTipoDTO;
 import com.empresa.entity.Proveedor;
-import org.springframework.data.jpa.repository.Query;
-
-import java.util.List;
 
 public interface ProveedorService {
 

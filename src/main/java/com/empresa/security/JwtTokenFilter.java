@@ -1,7 +1,6 @@
 package com.empresa.security;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,36 +31,33 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 		logger.info(">>> Ingreso doFilterInternal");
 		try {
-			String token = getToken(req);
-			logger.info(">>> Llegó token ==> " + token);
-			logger.info(">>> doFilterInternal >> token >> "  + token);
+		    String token = getToken(req);
+		    System.out.println("DEBUG -> Token extraido: " + token);
 
-			if (token != null && jwtProvider.validateToken(token)) {
-				String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
-				logger.info(">>> doFilterInternal >> nombreUsuario >> "  + nombreUsuario);
-				UserDetails userDetails = userDetailsService.loadUserByUsername(nombreUsuario);
-				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-				SecurityContextHolder.getContext().setAuthentication(auth);
-			}
+		    if (token != null && jwtProvider.validateToken(token)) {
+		        String nombreUsuario = jwtProvider.getNombreUsuarioFromToken(token);
+		        System.out.println("DEBUG -> Token VALIDO para el usuario: " + nombreUsuario);
+
+		        UserDetails userDetails = userDetailsService.loadUserByUsername(nombreUsuario);
+		        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+		                userDetails, null, userDetails.getAuthorities());
+		        SecurityContextHolder.getContext().setAuthentication(auth);
+		    } else {
+		        System.out.println("DEBUG -> El token es NULL o la validacion de jwtProvider.validateToken fallo.");
+		    }
 		} catch (Exception e) {
-			logger.error("fail en el método doFilter " + e.getMessage());
+		    System.out.println("DEBUG -> Ocurrio una excepcion en el filtro: " + e.getMessage());
+		    e.printStackTrace();
 		}
 		filterChain.doFilter(req, res);
 	}
 
 	private String getToken(HttpServletRequest request) {
-		Enumeration<String> headerNames = request.getHeaderNames();
-
-	    if (headerNames != null) {
-	            while (headerNames.hasMoreElements()) {
-	            	String headerName = headerNames.nextElement();
-	            	logger.info("Header: >> " + headerName + " >> " + request.getHeader(headerName));
-	            }
-	    }
 		String header = request.getHeader("Authorization");
 		logger.info(">>> header >>> " + header);
-		if (header != null && header.startsWith("Bearer"))
-			return header.replace("Bearer ", "");
+		if (header != null && header.startsWith("Bearer ")) {
+			return header.substring(7);
+		}
 		return null;
 	}
 }

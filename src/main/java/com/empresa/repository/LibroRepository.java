@@ -1,11 +1,11 @@
 package com.empresa.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-import com.empresa.entity.Libro;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
+import com.empresa.entity.Libro;
 
 public interface LibroRepository  extends JpaRepository<Libro, Integer> {
 

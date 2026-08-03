@@ -35,7 +35,7 @@ public class Autor {
 	private String telefono;
 	private String celular;
 	private String orcid;
-	
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
 	private LocalDateTime fechaRegistro;
 

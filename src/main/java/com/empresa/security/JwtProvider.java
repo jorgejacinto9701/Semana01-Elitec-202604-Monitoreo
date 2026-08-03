@@ -33,28 +33,28 @@ public class JwtProvider {
         UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
         return generateTokenWithClaims(usuarioPrincipal);
     }
-    
+
     // Nuevo método que incluye roles y opciones en el token
     public String generateTokenWithClaims(UsuarioPrincipal usuarioPrincipal){
         logger.info(">>> generateTokenWithClaims" );
-        
+
         Map<String, Object> claims = new HashMap<>();
-        
+
         // Información básica del usuario
         claims.put("idUsuario", usuarioPrincipal.getIdUsuario());
         claims.put("nombreCompleto", usuarioPrincipal.getNombreCompleto());
         claims.put("login", usuarioPrincipal.getLogin());
-        
+
         // Agregar roles (nombres)
         List<String> rolesNombres = usuarioPrincipal.getAuthorities().stream().map(auth -> auth.getAuthority()).collect(Collectors.toList());
         claims.put("roles", rolesNombres);
-        
+
         // Agregar opciones
         if (usuarioPrincipal.getOpciones() != null) {
         	List<Opcion> lstOpciones = usuarioPrincipal.getOpciones();
             claims.put("opciones", lstOpciones);
         }
-        
+
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(usuarioPrincipal.getUsername())
@@ -67,7 +67,7 @@ public class JwtProvider {
     public String getNombreUsuarioFromToken(String token){
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
     }
-    
+
     public boolean validateToken(String token){
         try {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);

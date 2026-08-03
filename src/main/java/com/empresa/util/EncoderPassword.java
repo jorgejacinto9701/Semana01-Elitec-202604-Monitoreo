@@ -7,10 +7,10 @@ public class EncoderPassword {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String password = "juana2026";
 		String encodedPassword = encoder.encode(password);
-		
+
 		System.out.println();
 		System.out.println("Password is         : " + password);
 		System.out.println("Encoded Password is : " + encodedPassword);
-	
+
 	}
 }

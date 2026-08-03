@@ -19,5 +19,5 @@ public class AlumnoServiceImp implements AlumnoService {
 		return repository.findByOrderByApellidosAsc();
 	}
 
-	
+
 }

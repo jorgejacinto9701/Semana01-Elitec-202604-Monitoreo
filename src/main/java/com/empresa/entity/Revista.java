@@ -30,9 +30,9 @@ public class Revista {
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "America/Lima")
 	private LocalDate fechaCreacion;
-	
+
 	private String telefono;
-	
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss")
 	private LocalDateTime fechaRegistro;
 

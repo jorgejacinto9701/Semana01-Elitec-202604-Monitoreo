@@ -1,9 +1,10 @@
 package com.empresa.repository;
 
-import com.empresa.entity.Pais;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import com.empresa.entity.Pais;
 
 public interface PaisRepository extends JpaRepository<Pais, Integer> {
 

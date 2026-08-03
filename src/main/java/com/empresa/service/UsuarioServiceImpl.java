@@ -21,7 +21,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
 	private UsuarioHasPasatiempoRepository usuarioHasPasatiempoRepository;
-	
+
 	@Override
 	public List<Usuario> listaUsuario() {
 		return usuarioRepository.findAll();
