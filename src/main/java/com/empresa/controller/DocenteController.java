@@ -25,4 +25,19 @@ public class DocenteController {
         salida.put("mensaje", "Docente '"+  obj.getNombres()+ "' Registrado de ID : " + obj.getIdDocente());
         return ResponseEntity.ok(salida);
     }
+    
+    @GetMapping("/porDepProDist1/{dep}/{pro}/{dist}")
+    public ResponseEntity<?> listaPorDepProDist(@PathVariable String dep, @PathVariable String pro, @PathVariable String dist){
+		HashMap<String, Object> salida = new HashMap<>();
+		salida.put("data", service.listaPorDepProDist(dep, pro, dist));
+		return ResponseEntity.ok(salida);
+	}
+    
+    @GetMapping("/porDepProDist2")
+    public ResponseEntity<?> listaPorDepProDist2(@RequestParam String dep, @RequestParam String pro, @RequestParam String dist){
+    	HashMap<String, Object> salida = new HashMap<>();
+		salida.put("data", service.listaPorDepProDist(dep, pro, dist));
+		return ResponseEntity.ok(salida);
+    }
+    
 }
