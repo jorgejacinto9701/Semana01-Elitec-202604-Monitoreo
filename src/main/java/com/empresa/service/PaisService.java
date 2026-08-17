@@ -8,5 +8,8 @@ public interface PaisService {
 
     public abstract List<Pais> listaTodos();
 
+    public abstract List<Pais> buscarPorIsoYNombre(
+            String iso,
+            String nombre);
 
 }
