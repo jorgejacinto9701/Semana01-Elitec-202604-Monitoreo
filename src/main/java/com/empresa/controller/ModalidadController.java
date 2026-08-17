@@ -54,7 +54,28 @@ public class ModalidadController {
         List<Modalidad> lista = modalidadService.listaPorNombreYSede(nombre, sede);
         return ResponseEntity.ok(lista);
     }
+    
+    @GetMapping("/modalidadDeporte/{modalidad}/{deporte}")
+    public ResponseEntity<List<Modalidad>> listaPorModalidadYDeportePath(
+            @PathVariable String modalidad,
+            @PathVariable String deporte) {
 
+        List<Modalidad> lista =
+                modalidadService.listaPorModalidadYDeporte(modalidad, deporte);
+
+        return ResponseEntity.ok(lista);
+    }
+    
+    @GetMapping("/modalidadDeporte")
+    public ResponseEntity<List<Modalidad>> listaPorModalidadYDeporteParam(
+            @RequestParam String modalidad,
+            @RequestParam String deporte) {
+
+        List<Modalidad> lista =
+                modalidadService.listaPorModalidadYDeporte(modalidad, deporte);
+
+        return ResponseEntity.ok(lista);
+    }
 
     @PostMapping()
     public ResponseEntity<?> registro(@RequestBody Modalidad obj){
