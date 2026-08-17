@@ -27,5 +27,10 @@ public interface ModalidaRepository extends JpaRepository<Modalidad, Integer> {
             @Param("nombre") String nombre,
             @Param("sede") String sede);
 
-
+    @Query("SELECT m FROM Modalidad m "
+            + "WHERE m.nombre = :modalidad "
+            + "AND m.deporte.nombre = :deporte")
+    public List<Modalidad> buscarPorModalidadYDeporte(
+            @Param("modalidad") String modalidad,
+            @Param("deporte") String deporte);
 }
