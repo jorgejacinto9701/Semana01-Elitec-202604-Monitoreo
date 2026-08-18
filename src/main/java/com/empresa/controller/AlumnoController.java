@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.empresa.entity.Alumno;
@@ -26,4 +27,20 @@ public class AlumnoController {
     public List<Alumno> listaPorDNI(@PathVariable String dni){
     	return service.listaPorDNI(dni);
     }
-}
+    
+    @GetMapping("/listaPorDniYPais/{dni}/{nombrePais}")
+    public List<Alumno> listaPorDniYPais(
+            @PathVariable String dni,
+            @PathVariable String nombrePais){
+        return service.listaPorDniYPais(dni, nombrePais);
+    }
+    
+    @GetMapping("/listaPorDniYPaisParam")
+    public List<Alumno> listaPorDniYPaisParam(
+            @RequestParam String dni,
+            @RequestParam String nombrePais) {
+        return service.listaPorDniYPais(dni, nombrePais);
+    }
+    
+    
+}//fin de la clase

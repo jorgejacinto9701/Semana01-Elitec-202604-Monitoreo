@@ -1,0 +1,90 @@
+{
+  "info": {
+    "_postman_id": "bc68988a-5e97-4857-a9d9-b1b7175817f8",
+    "name": "T3-IBAÑEZ",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "42752637"
+  },
+  "item": [
+    {
+      "name": "Consulta DNI y Pais - PathVariable",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_009o}}eyJzdWIiOiJqdWFuYSIsIm9wY2lvbmVzIjpbeyJpZE9wY2lvbiI6MjIsIm5vbWJyZSI6IlJlZ2lzdHJvIE1vZGFsaWRhZCIsInJ1dGEiOiJhZ3JlZ2FyTW9kYWxpZGFkIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyMywibm9tYnJlIjoiUmVnaXN0cm8gUHJvdmVlZG9yIiwicnV0YSI6ImFncmVnYXJQcm92ZWVkb3IiLCJlc3RhZG8iOjEsInRpcG8iOjF9LHsiaWRPcGNpb24iOjI0LCJub21icmUiOiJDb25zdWx0YSBQcm92ZWVkb3IiLCJydXRhIjoiY29uc3VsdGFyUHJvdmVlZG9yIiwiZXN0YWRvIjoxLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoyNSwibm9tYnJlIjoiQ29uc3VsdGEgTW9kYWxpZGFkIiwicnV0YSI6ImNvbnN1bHRhck1vZGFsaWRhZCIsImVzdGFkbyI6MSwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFVuaXZlcnNpZGFkIiwicnV0YSI6ImFncmVnYXJVbml2ZXJzaWRhZCIsImVzdGFkbyI6MSwidGlwbyI6MX0seyJpZE9wY2lvbiI6MjcsIm5vbWJyZSI6IkNvbnN1bHRhIFVuaXZlcnNpZGFkIiwicnV0YSI6ImNvbnN1bHRhclVuaXZlcnNpZGFkIiwiZXN0YWRvIjoxLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoyOCwibm9tYnJlIjoiUmVnaXN0cm8gTGlicm8iLCJydXRhIjoiYWdyZWdhckxpYnJvIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyOSwibm9tYnJlIjoiQ29uc3VsdGEgTGlicm8iLCJydXRhIjoiY29uc3VsdGFyTGlicm8iLCJlc3RhZG8iOjEsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjMwLCJub21icmUiOiJSZWdpc3RybyBQbGF0byIsInJ1dGEiOiJhZ3JlZ2FyUGxhdG8iLCJlc3RhZG8iOjEsInRpcG8iOjF9LHsiaWRPcGNpb24iOjMxLCJub21icmUiOiJDb25zdWx0YSBQbGF0byIsInJ1dGEiOiJjb25zdWx0YXJQbGF0byIsImVzdGFkbyI6MSwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MzIsIm5vbWJyZSI6IlJlZ2lzdHJvIERvY2VudGUiLCJydXRhIjoicmVnaXN0cm9Eb2NlbnRlIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjozMywibm9tYnJlIjoiQ1JVRCBQcm92ZWVkb3IiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsImVzdGFkbyI6MSwidGlwbyI6M30seyJpZE9wY2lvbiI6MzQsIm5vbWJyZSI6IlJlcG9ydGUgUHJvdmVlZG9yIiwicnV0YSI6InJlcG9ydGVQcm92ZWVkb3IiLCJlc3RhZG8iOjEsInRpcG8iOjR9XSwiaWRVc3VhcmlvIjoyLCJyb2xlcyI6WyJBc2lzdGVudGUgVVBDIl0sIm5vbWJyZUNvbXBsZXRvIjoiSnVhbmEgSnVsaXNzYSBBcmNvcyIsImxvZ2luIjoianVhbmEiLCJleHAiOjE3ODcwNjU1OTEsImlhdCI6MTc4NzAyOTU5MX0.15txbYrUKJZOy-yxLoUlz6nnRZ3k7CUrcTTEl6GeWcX-rBqOsIuEsdVXjOCn6gEfkWw_GfHMJhfva4JI5FjB_w",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/url/alumno/listaPorDniYPais/87474747/Alemania",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "url",
+            "alumno",
+            "listaPorDniYPais",
+            "87474747",
+            "Alemania"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Consulta DNI y Pais - RequestParam",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_009o}}eyJzdWIiOiJqdWFuYSIsIm9wY2lvbmVzIjpbeyJpZE9wY2lvbiI6MjIsIm5vbWJyZSI6IlJlZ2lzdHJvIE1vZGFsaWRhZCIsInJ1dGEiOiJhZ3JlZ2FyTW9kYWxpZGFkIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyMywibm9tYnJlIjoiUmVnaXN0cm8gUHJvdmVlZG9yIiwicnV0YSI6ImFncmVnYXJQcm92ZWVkb3IiLCJlc3RhZG8iOjEsInRpcG8iOjF9LHsiaWRPcGNpb24iOjI0LCJub21icmUiOiJDb25zdWx0YSBQcm92ZWVkb3IiLCJydXRhIjoiY29uc3VsdGFyUHJvdmVlZG9yIiwiZXN0YWRvIjoxLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoyNSwibm9tYnJlIjoiQ29uc3VsdGEgTW9kYWxpZGFkIiwicnV0YSI6ImNvbnN1bHRhck1vZGFsaWRhZCIsImVzdGFkbyI6MSwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFVuaXZlcnNpZGFkIiwicnV0YSI6ImFncmVnYXJVbml2ZXJzaWRhZCIsImVzdGFkbyI6MSwidGlwbyI6MX0seyJpZE9wY2lvbiI6MjcsIm5vbWJyZSI6IkNvbnN1bHRhIFVuaXZlcnNpZGFkIiwicnV0YSI6ImNvbnN1bHRhclVuaXZlcnNpZGFkIiwiZXN0YWRvIjoxLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoyOCwibm9tYnJlIjoiUmVnaXN0cm8gTGlicm8iLCJydXRhIjoiYWdyZWdhckxpYnJvIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyOSwibm9tYnJlIjoiQ29uc3VsdGEgTGlicm8iLCJydXRhIjoiY29uc3VsdGFyTGlicm8iLCJlc3RhZG8iOjEsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjMwLCJub21icmUiOiJSZWdpc3RybyBQbGF0byIsInJ1dGEiOiJhZ3JlZ2FyUGxhdG8iLCJlc3RhZG8iOjEsInRpcG8iOjF9LHsiaWRPcGNpb24iOjMxLCJub21icmUiOiJDb25zdWx0YSBQbGF0byIsInJ1dGEiOiJjb25zdWx0YXJQbGF0byIsImVzdGFkbyI6MSwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MzIsIm5vbWJyZSI6IlJlZ2lzdHJvIERvY2VudGUiLCJydXRhIjoicmVnaXN0cm9Eb2NlbnRlIiwiZXN0YWRvIjoxLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjozMywibm9tYnJlIjoiQ1JVRCBQcm92ZWVkb3IiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsImVzdGFkbyI6MSwidGlwbyI6M30seyJpZE9wY2lvbiI6MzQsIm5vbWJyZSI6IlJlcG9ydGUgUHJvdmVlZG9yIiwicnV0YSI6InJlcG9ydGVQcm92ZWVkb3IiLCJlc3RhZG8iOjEsInRpcG8iOjR9XSwiaWRVc3VhcmlvIjoyLCJyb2xlcyI6WyJBc2lzdGVudGUgVVBDIl0sIm5vbWJyZUNvbXBsZXRvIjoiSnVhbmEgSnVsaXNzYSBBcmNvcyIsImxvZ2luIjoianVhbmEiLCJleHAiOjE3ODcwNjU1OTEsImlhdCI6MTc4NzAyOTU5MX0.15txbYrUKJZOy-yxLoUlz6nnRZ3k7CUrcTTEl6GeWcX-rBqOsIuEsdVXjOCn6gEfkWw_GfHMJhfva4JI5FjB_w",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8090/url/alumno/listaPorDniYPaisParam?dni=87474747&nombrePais=Alemania",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8090",
+          "path": [
+            "url",
+            "alumno",
+            "listaPorDniYPaisParam"
+          ],
+          "query": [
+            {
+              "key": "dni",
+              "value": "87474747"
+            },
+            {
+              "key": "nombrePais",
+              "value": "Alemania"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_009o",
+      "secret": true
+    }
+  ]
+}
