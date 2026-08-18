@@ -23,6 +23,9 @@ public class AlumnoServiceImp implements AlumnoService {
 	public List<Alumno> listaPorDNI(String dni) {
 		return repository.listaPorDNI(dni);
 	}
-
-	
-}
+ 
+	@Override
+	public List<Alumno> listaPorDniYPais(String dni, String nombrePais) {
+	    return repository.listaPorDniYPais(dni, nombrePais);
+	}
+}//fin dela clase
