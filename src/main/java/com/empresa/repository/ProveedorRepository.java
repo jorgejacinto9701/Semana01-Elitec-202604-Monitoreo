@@ -1,15 +1,16 @@
 package com.empresa.repository;
 
-import com.empresa.entity.Alumno;
 import com.empresa.entity.Proveedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import com.empresa.dto.ProveedorPaisDTO;
 import com.empresa.dto.ProveedorEstadoDTO;
 import com.empresa.dto.ProveedorTipoDTO;
 import com.empresa.dto.ProveedorMesDTO;
+
 
 
 public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
@@ -54,4 +55,15 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
 	@Query("select e from Proveedor e where e.nombre = ?1")
 	public abstract List<Proveedor> listaPorNombre(String nombre);
 
+	
+    @Query("SELECT p FROM Proveedor p WHERE p.nombre LIKE %:nombre% AND p.estado = :estado")
+    public abstract List<Proveedor> listaPorNombreYEstadoJPQL(
+        @Param("nombre") String nombre, 
+        @Param("estado") int estado
+    );
+    
+  //JPQL:
+  	
+  	@Query("select p from Proveedor p where p.dni = :dni and p.pais.nombre = :nombrePais")
+  	public List<Proveedor> listaPorDniYPais(@Param("dni") String dni, @Param("nombrePais") String nombrePais);
 }

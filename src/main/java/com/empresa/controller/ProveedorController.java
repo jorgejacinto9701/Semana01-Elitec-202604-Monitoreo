@@ -114,5 +114,36 @@ public class ProveedorController {
         return proveedorService.listaPorNombre(nombre);
     }
 
+    @GetMapping("/consulta")
+    public ResponseEntity<List<Proveedor>> consultarPorDosCampos(
+            @RequestParam(name = "nombre", defaultValue = "") String nombre,
+            @RequestParam(name = "estado", defaultValue = "1") int estado) {
+
+        
+        List<Proveedor> lista = proveedorService.listaPorNombreYEstado(nombre, estado);
+        
+        return ResponseEntity.ok(lista);
+    }
+    
+    
+ // 1. Consulta usando @PathVariable
+    @GetMapping("/porDniYPais/{dni}/{nombrePais}")
+    public ResponseEntity<List<Proveedor>> listaPorDniYPaisPath(
+            @PathVariable String dni,
+            @PathVariable String nombrePais) {
+        
+        List<Proveedor> lista = proveedorService.listaPorDniYPais(dni, nombrePais);
+        return ResponseEntity.ok(lista);
+    }
+
+    // 2. Consulta usando @RequestParam
+    @GetMapping("/consultaPorDniYPais")
+    public ResponseEntity<List<Proveedor>> listaPorDniYPaisParam(
+            @RequestParam(name = "dni") String dni,
+            @RequestParam(name = "nombrePais") String nombrePais) {
+        
+        List<Proveedor> lista = proveedorService.listaPorDniYPais(dni, nombrePais);
+        return ResponseEntity.ok(lista);
+    }
     
 }

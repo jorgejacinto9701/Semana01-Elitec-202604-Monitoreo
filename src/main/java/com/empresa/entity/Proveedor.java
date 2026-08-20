@@ -25,13 +25,16 @@ public class Proveedor {
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idtipo")
-    private Tipo tipo;
+    @JoinColumn(name = "idpais")
+    private Pais pais;
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idpais")
-    private Pais pais;
+    @JoinColumn(name = "idtipo")
+    private Tipo tipo;
+    
+    
+    
 
 
 }
