@@ -21,4 +21,12 @@ public interface ProveedorService {
     public abstract List<ProveedorMesDTO> cantidadPorMes();
     
     public abstract List<Proveedor> listaPorNombre(String nombre);
+    
+
+    public abstract List<Proveedor> listaPorNombreYEstado(String nombre, int estado);
+    
+    public abstract List<Proveedor> listaPorDniYPais(String dni, String nombrePais);
+    
+    
+    
 }

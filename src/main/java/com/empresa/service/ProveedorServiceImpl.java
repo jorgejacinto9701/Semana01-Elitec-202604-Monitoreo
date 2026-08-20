@@ -62,6 +62,12 @@ public class ProveedorServiceImpl implements ProveedorService{
 		return repository.listaPorNombre(nombre);
 	}
    
-	
-    
+	@Override
+    public List<Proveedor> listaPorNombreYEstado(String nombre, int estado) {
+        return repository.listaPorNombreYEstadoJPQL(nombre, estado);
+    }
+	@Override
+	public List<Proveedor> listaPorDniYPais(String dni, String nombrePais) {
+		return repository.listaPorDniYPais(dni, nombrePais);
+	}
 }  
